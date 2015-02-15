@@ -11,31 +11,29 @@
 	height: $toggle-height;
 
 	.label {
+		// This is the toggle container I guess, the rounded pill shape.
 		width: $toggle-width;
 		height: $toggle-height;
 		border-radius: $handle-size;
 		border-width: $border-width;
 	}
+
 	.label__text {
-		line-height: $toggle-height;
+		line-height: $toggle-height; // Vertical centring of text
 	}
 
-	.handle {
-		&:after {
-			top: $toggle-padding;
-			width: $handle-size;
-			height: $handle-size;
-		}
-
-		&--left:after {
-			left: $toggle-padding;
-		}
-
-		&--right:after {
-			right: $toggle-padding;
-		}
-
+	.handle:after {
+		top: $toggle-padding;
+		width: $handle-size; // Create a square to be rounded with border-radius
+		height: $handle-size; // Create a square to be rounded with border-radius
 	}
+	.handle--left:after {
+		left: $toggle-padding;
+	}
+	.handle--right:after {
+		right: $toggle-padding;
+	}
+
 
 	// Modifiers
 	&.toggle--text-inside {
@@ -72,6 +70,7 @@
 
 $box-shadow: true;
 $handle-colour: #8B4513;
+$background-colour: white;
 $positive-colour: green;
 $negative-colour: red;
 
@@ -79,26 +78,25 @@ $negative-colour: red;
 
 .toggle {
 
-	@include toggle-size();
-
 	// Hide the actual radio buttons
 	.toggle-radio {
 		display: none;
 	}
 
 	.label {
-		// the label takes the full width of the toggle so that it is clickable.
+
 		cursor: pointer;
 
-		position: absolute;
-		display: block;
+		position: absolute; // To place both sides of the toggle on top of each other
 
-		background: white;
+		background: $background-colour;
 
+		// Border - border-width is set in the sizing mixin
 		border-style: solid;
 		border-color: $handle-colour;
-		// Border-width is set in the sizing mixin
 
+
+		// Not crucial but just nice
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
@@ -110,7 +108,6 @@ $negative-colour: red;
 	.handle {
 		&:after {
 			content: "";
-			display: inline-block;
 			position: absolute;
 			background: $handle-colour;
 			border-radius: 100%;
@@ -136,13 +133,18 @@ $negative-colour: red;
 // ========= //
 
 // Sizes
+	.toggle--sml {
+		@include toggle-size(20px);
+	}
+
+	.toggle--med {
+		@include toggle-size();
+	}
+
 	.toggle--lrg {
 		@include toggle-size(45px);
 	}
 
-	.toggle--sml {
-		@include toggle-size(20px);
-	}
 
 // Colours
 	.toggle--positive-negative,
@@ -177,27 +179,27 @@ $negative-colour: red;
 	}
 
 	.toggle--text-outside {
+	// This isn't all that re-usable at the mo, its based on fixed widths rather than the length of the label text.
 
-		margin-left: 100px;
-
-		.handle--left {
-			.label__text {
-				text-align: left;
-				padding-left: 5px;
-			}
-		}
-
-		.handle--right {
-			.label__text {
-				text-align: right;
-				padding-right: 5px;
-			}
-		}
+		margin-left: 100px; // Move the toggle over to create room for the text on the left
 
 		.label__text {
 			position: absolute;
-			width: 110px;
+			width: 120px;
 		}
+
+		// The text on the right
+		.handle--left .label__text {
+			text-align: left;
+			padding-left: 5px;
+		}
+
+		// The text on the left
+		.handle--right .label__text {
+			text-align: right;
+			padding-right: 5px;
+		}
+
 
 	}
 

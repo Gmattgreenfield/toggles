@@ -2,7 +2,7 @@
   box-sizing: border-box; }
 
 body {
-  background: #C1C1C1;
+  background: #DBE7F1;
   font-family: sans-serif;
   max-width: 800px;
   margin: auto;
@@ -11,84 +11,27 @@ body {
 h2 {
   margin-top: 5em; }
 
-.toggle {
-  height: 36px; }
-  .toggle .label {
-    width: 75px;
-    height: 36px;
-    border-radius: 30px;
-    border-width: 1px; }
-  .toggle .label__text {
-    line-height: 36px; }
-  .toggle .handle:after {
-    top: 2px;
-    width: 30px;
-    height: 30px; }
-  .toggle .handle--left:after {
-    left: 2px; }
-  .toggle .handle--right:after {
-    right: 2px; }
-  .toggle.toggle--text-inside .handle--left .label__text {
-    padding-left: 30px; }
-  .toggle.toggle--text-inside .handle--right .label__text {
-    padding-right: 30px; }
-  .toggle.toggle--text-outside .handle--left .label__text {
-    left: 75px; }
-  .toggle.toggle--text-outside .handle--right .label__text {
-    right: 75px; }
-  .toggle.toggle--label-on-left .handle--right .label__text {
-    right: 75px; }
-  .toggle .toggle-radio {
-    display: none; }
-  .toggle .label {
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    background: white;
-    border-style: solid;
-    border-color: #8B4513;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none; }
-  .toggle .handle:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    background: #8B4513;
-    border-radius: 100%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
-  .toggle .toggle-radio:checked + .label {
-    z-index: -1; }
-
-.toggle--lrg {
-  height: 51px; }
-  .toggle--lrg .label {
-    width: 112.5px;
-    height: 51px;
-    border-radius: 45px;
-    border-width: 1px; }
-  .toggle--lrg .label__text {
-    line-height: 51px; }
-  .toggle--lrg .handle:after {
-    top: 2px;
-    width: 45px;
-    height: 45px; }
-  .toggle--lrg .handle--left:after {
-    left: 2px; }
-  .toggle--lrg .handle--right:after {
-    right: 2px; }
-  .toggle--lrg.toggle--text-inside .handle--left .label__text {
-    padding-left: 45px; }
-  .toggle--lrg.toggle--text-inside .handle--right .label__text {
-    padding-right: 45px; }
-  .toggle--lrg.toggle--text-outside .handle--left .label__text {
-    left: 112.5px; }
-  .toggle--lrg.toggle--text-outside .handle--right .label__text {
-    right: 112.5px; }
-  .toggle--lrg.toggle--label-on-left .handle--right .label__text {
-    right: 112.5px; }
+.toggle .toggle-radio {
+  display: none; }
+.toggle .label {
+  cursor: pointer;
+  position: absolute;
+  background: white;
+  border-style: solid;
+  border-color: #8B4513;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+.toggle .handle:after {
+  content: "";
+  position: absolute;
+  background: #8B4513;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+.toggle .toggle-radio:checked + .label {
+  z-index: -1; }
 
 .toggle--sml {
   height: 26px; }
@@ -118,6 +61,62 @@ h2 {
   .toggle--sml.toggle--label-on-left .handle--right .label__text {
     right: 50px; }
 
+.toggle--med {
+  height: 36px; }
+  .toggle--med .label {
+    width: 75px;
+    height: 36px;
+    border-radius: 30px;
+    border-width: 1px; }
+  .toggle--med .label__text {
+    line-height: 36px; }
+  .toggle--med .handle:after {
+    top: 2px;
+    width: 30px;
+    height: 30px; }
+  .toggle--med .handle--left:after {
+    left: 2px; }
+  .toggle--med .handle--right:after {
+    right: 2px; }
+  .toggle--med.toggle--text-inside .handle--left .label__text {
+    padding-left: 30px; }
+  .toggle--med.toggle--text-inside .handle--right .label__text {
+    padding-right: 30px; }
+  .toggle--med.toggle--text-outside .handle--left .label__text {
+    left: 75px; }
+  .toggle--med.toggle--text-outside .handle--right .label__text {
+    right: 75px; }
+  .toggle--med.toggle--label-on-left .handle--right .label__text {
+    right: 75px; }
+
+.toggle--lrg {
+  height: 51px; }
+  .toggle--lrg .label {
+    width: 112.5px;
+    height: 51px;
+    border-radius: 45px;
+    border-width: 1px; }
+  .toggle--lrg .label__text {
+    line-height: 51px; }
+  .toggle--lrg .handle:after {
+    top: 2px;
+    width: 45px;
+    height: 45px; }
+  .toggle--lrg .handle--left:after {
+    left: 2px; }
+  .toggle--lrg .handle--right:after {
+    right: 2px; }
+  .toggle--lrg.toggle--text-inside .handle--left .label__text {
+    padding-left: 45px; }
+  .toggle--lrg.toggle--text-inside .handle--right .label__text {
+    padding-right: 45px; }
+  .toggle--lrg.toggle--text-outside .handle--left .label__text {
+    left: 112.5px; }
+  .toggle--lrg.toggle--text-outside .handle--right .label__text {
+    right: 112.5px; }
+  .toggle--lrg.toggle--label-on-left .handle--right .label__text {
+    right: 112.5px; }
+
 .toggle--positive-negative .handle--right,
 .toggle--positive-neutral .handle--right {
   background: green; }
@@ -133,15 +132,15 @@ h2 {
 
 .toggle--text-outside {
   margin-left: 100px; }
+  .toggle--text-outside .label__text {
+    position: absolute;
+    width: 120px; }
   .toggle--text-outside .handle--left .label__text {
     text-align: left;
     padding-left: 5px; }
   .toggle--text-outside .handle--right .label__text {
     text-align: right;
     padding-right: 5px; }
-  .toggle--text-outside .label__text {
-    position: absolute;
-    width: 110px; }
 
 .toggle--label-on-left {
   margin-left: 100px; }
