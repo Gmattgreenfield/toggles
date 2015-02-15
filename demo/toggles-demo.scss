@@ -1,0 +1,19 @@
+// Just for the demo
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #C1C1C1;
+	font-family: sans-serif;
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+}
+
+h2 {
+	margin-top: 5em;
+}
+
+@import "../toggles";

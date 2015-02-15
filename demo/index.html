@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Toggles</title>
+	<link rel="stylesheet" href="toggles-demo.css">
+</head>
+<body>
+	<h1>Toggles</h1>
+	<p>Default toggle can be adapted with the modifiers, it could end up looking like this...</p>
+	<pre>toggle toggle--size toggle--colour toggle--label-style</pre>
+
+	<h2>Standard Toggle</h2>
+
+	<div class="toggle">
+
+		<input type="radio" name="toggle-1" id="toggle-1-left" class="toggle-radio toggle-radio--left" value="off" checked />
+		<label class="label handle handle--right" for="toggle-1-left"></label>
+
+		<input type="radio" name="toggle-1" id="toggle-1-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-1-right"></label>
+
+	</div>
+
+
+
+	<h2>With text inside</h2>
+	<h3>.toggle--text-inside</h3>
+	<p>To turn the switch ON we have to click 'OFF'</p>
+
+	<div class="toggle toggle--text-inside">
+
+		<input type="radio" name="toggle-2" id="toggle-2-left" class="toggle-radio toggle-radio--left" value="off" checked />
+		<label class="label handle handle--right" for="toggle-2-left">
+			<span class="label__text">ON</span>
+		</label>
+
+		<input type="radio" name="toggle-2" id="toggle-2-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-2-right">
+			<span class="label__text">OFF</span>
+		</label>
+
+	</div>
+
+
+	<h2>Positive and negative</h2>
+	<h3>.toggle--positive-negative</h3>
+
+	<div class="toggle toggle--text-inside toggle--positive-negative">
+
+		<input type="radio" name="toggle-3" id="toggle-3-left" class="toggle-radio toggle-radio--left" value="off" checked />
+		<label class="label handle handle--right" for="toggle-3-left">
+			<span class="label__text">ON</span>
+		</label>
+
+		<input type="radio" name="toggle-3" id="toggle-3-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-3-right">
+			<span class="label__text">OFF</span>
+		</label>
+
+	</div>
+
+	<h2>Positive and neutral</h2>
+	<h3>.toggle--positive-neutral</h3>
+
+	<div class="toggle toggle--text-inside toggle--positive-neutral">
+
+		<input type="radio" name="toggle-3b" id="toggle-3b-left" class="toggle-radio toggle-radio--left" value="off" checked />
+		<label class="label handle handle--right" for="toggle-3b-left">
+			<span class="label__text">ON</span>
+		</label>
+
+		<input type="radio" name="toggle-3b" id="toggle-3b-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-3b-right">
+			<span class="label__text">OFF</span>
+		</label>
+
+	</div>
+
+
+	<h2>With text outside</h2>
+	<h3>.toggle--text-outside</h3>
+	<p>Note how the label text have been swapped, we now want clicking 'OFF' to select OFF</p>
+
+	<div class="toggle toggle--text-outside">
+
+		<input type="radio" name="toggle-4" id="toggle-4-left" class="toggle-radio toggle-radio--left" value="off" checked/>
+		<label class="label handle handle--right" for="toggle-4-left">
+			<span class="label__text">One option</span>
+		</label>
+
+		<input type="radio" name="toggle-4" id="toggle-4-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-4-right">
+			<span class="label__text">Another option</span>
+		</label>
+
+	</div>
+
+
+	<h2>Place a label on the left that toggles both checkboxes</h2>
+	<h3>.toggle--label-on-left</h3>
+
+	<div class="toggle toggle--label-on-left">
+
+		<input type="radio" name="toggle-5" id="toggle-5-left" class="toggle-radio toggle-radio--left" value="off" checked/>
+		<label class="label handle handle--right" for="toggle-5-left">
+			<span class="label__text">Edit Mode</span>
+		</label>
+
+		<input type="radio" name="toggle-5" id="toggle-5-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-5-right">
+			<span class="label__text"></span>
+		</label>
+
+	</div>
+
+	<h2>Large Toggle</h2>
+	<h3>.toggle--lrg</h3>
+
+	<div class="toggle toggle--lrg">
+
+		<input type="radio" name="toggle-6" id="toggle-6-left" class="toggle-radio toggle-radio--left" value="off" checked/>
+		<label class="label handle handle--right" for="toggle-6-left">
+			<span class="label__text"></span>
+		</label>
+
+		<input type="radio" name="toggle-6" id="toggle-6-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-6-right">
+			<span class="label__text"></span>
+		</label>
+
+	</div>
+
+
+	<h2>Small Toggle</h2>
+	<h3>.toggle--sml</h3>
+
+	<div class="toggle toggle--sml">
+
+		<input type="radio" name="toggle-7" id="toggle-7-left" class="toggle-radio toggle-radio--left" value="off" checked/>
+		<label class="label handle handle--right" for="toggle-7-left">
+			<span class="label__text"></span>
+		</label>
+
+		<input type="radio" name="toggle-7" id="toggle-7-right" class="toggle-radio toggle-radio--right" value="on"/>
+		<label class="label handle handle--left" for="toggle-7-right">
+			<span class="label__text"></span>
+		</label>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+
+
+
+// MIXINS
+
+@mixin toggle-size ($handle-size: 30px, $toggle-padding: 2px, $border-width: 1px){
+
+	$toggle-width: $handle-size * 2.5;
+	$toggle-height: $handle-size + ($toggle-padding * 2) + ($border-width * 2); // top and bottom padding plus 2px for the border
+
+	height: $toggle-height;
+
+	.label {
+		width: $toggle-width;
+		height: $toggle-height;
+		border-radius: $handle-size;
+		border-width: $border-width;
+	}
+	.label__text {
+		line-height: $toggle-height;
+	}
+
+	.handle {
+		&:after {
+			top: $toggle-padding;
+			width: $handle-size;
+			height: $handle-size;
+		}
+
+		&--left:after {
+			left: $toggle-padding;
+		}
+
+		&--right:after {
+			right: $toggle-padding;
+		}
+
+	}
+
+	// Modifiers
+	&.toggle--text-inside {
+
+		.handle--left .label__text {
+			padding-left: $handle-size;
+		}
+
+		.handle--right .label__text {
+			padding-right: $handle-size;
+		}
+	}
+
+	&.toggle--text-outside {
+
+		.handle--left .label__text {
+			left: $toggle-width;
+		}
+
+		.handle--right .label__text {
+			right: $toggle-width;
+		}
+	}
+
+	&.toggle--label-on-left {
+
+		.handle--right .label__text {
+			right: $toggle-width;
+		}
+	}
+
+} // End Mixin
+
+
+$box-shadow: true;
+$handle-colour: #8B4513;
+$positive-colour: green;
+$negative-colour: red;
+
+// BASE STYLES
+
+.toggle {
+
+	@include toggle-size();
+
+	// Hide the actual radio buttons
+	.toggle-radio {
+		display: none;
+	}
+
+	.label {
+		// the label takes the full width of the toggle so that it is clickable.
+		cursor: pointer;
+
+		position: absolute;
+		display: block;
+
+		background: white;
+
+		border-style: solid;
+		border-color: $handle-colour;
+		// Border-width is set in the sizing mixin
+
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+
+	}
+
+	.handle {
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			background: $handle-colour;
+			border-radius: 100%;
+
+			@if $box-shadow == true {
+				box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+			}
+		}
+
+	}
+
+	// If its checked, we dont need its label to turn it on anymore
+	.toggle-radio:checked + .label {
+		z-index: -1;
+	}
+
+}
+
+
+
+// ========= //
+// MODIFIERS //
+// ========= //
+
+// Sizes
+	.toggle--lrg {
+		@include toggle-size(45px);
+	}
+
+	.toggle--sml {
+		@include toggle-size(20px);
+	}
+
+// Colours
+	.toggle--positive-negative,
+	.toggle--positive-neutral {
+
+		.handle--right {
+			background: $positive-colour;
+		}
+
+	}
+
+	.toggle--positive-negative {
+
+		.handle--left {
+			background: $negative-colour;
+		}
+
+	}
+
+
+
+// Text Positioning
+	.toggle--text-inside {
+		// See the toggle-size mixin for the positioning values
+		.label__text {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			font-size: 12px;
+		}
+
+	}
+
+	.toggle--text-outside {
+
+		margin-left: 100px;
+
+		.handle--left {
+			.label__text {
+				text-align: left;
+				padding-left: 5px;
+			}
+		}
+
+		.handle--right {
+			.label__text {
+				text-align: right;
+				padding-right: 5px;
+			}
+		}
+
+		.label__text {
+			position: absolute;
+			width: 110px;
+		}
+
+	}
+
+
+	.toggle--label-on-left {
+		// Places the left label outside of the toggle and the right table (transparent) on top of it, meaning the same click area is used for bother toggles
+		margin-left: 100px;
+
+		.handle--left {
+			.label__text {
+				display: block;
+				// background: red;
+
+				width: 100px;
+				height: 100%;
+				left: -100px;
+				position: absolute;
+			}
+		}
+
+		.handle--right {
+			.label__text {
+				text-align: right;
+				padding-right: 5px;
+			}
+		}
+
+		.label__text {
+			position: absolute;
+			width: 110px;
+		}
+	}
